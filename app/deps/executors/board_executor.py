@@ -25,8 +25,9 @@ class BoardExecutor:
 
     def get_all_boards(self):
         session = get_session()
-        boards = select(Board)
 
-        print(session.execute(boards).fetchall())
-        # ATTENTION
-        return "asd"
+        fetched_boards = session.execute(select(Board)).scalars().all()
+
+        response = {"board " + str(i+1): fetched_boards[i].get_info() for i in range(len(fetched_boards))}
+
+        return response

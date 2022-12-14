@@ -19,3 +19,13 @@ class Board(DBase):
 
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    def get_info(self):
+        info = {
+            "id": self.id,
+            "is_open": self.is_open,
+            "tasks": ["task"+str(i+1) for i in range(len(self.tasks))],
+            "created_at": self.created_at,
+            "updated_at": self.updated_at
+        }
+        return info

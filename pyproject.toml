@@ -9,7 +9,6 @@ packages = [{include = "synt_tester"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^2.2.2"
-flask-sqlalchemy = "^3.0.2"
 pydantic = "^1.10.2"
 sqlalchemy = {extras = ["postgres"], version = "^1.4.45"}
 psycopg2-binary = "^2.9.5"

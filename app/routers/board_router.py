@@ -12,10 +12,12 @@ board_executor = BoardExecutor()
 def board_home(board_id: int):
     return {"board_id": board_id}
 
+
 @board_router.get("/get_all_boards")
 def get_all_boards():
     response = board_executor.get_all_boards()
     return response
+
 
 @board_router.get("/get_board_tasks/<int:board_id>")
 def get_board_tasks(board_id: int):

@@ -15,7 +15,7 @@ class Task(DBase):
 
     name = Column(String)
     description = Column(Text)
-    status = Column(Boolean)
+    status = Column(Boolean, default=False)
 
     board_id = Column(BigInteger, ForeignKey("boards.id"))
 
@@ -23,4 +23,15 @@ class Task(DBase):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def get_info(self):
-        return "Task with id - " + str(self.id)
+
+        info = {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,
+            "status": self.status,
+            "board_id": self.board_id,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at
+        }
+
+        return info
