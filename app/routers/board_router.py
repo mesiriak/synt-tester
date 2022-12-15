@@ -19,12 +19,6 @@ def get_all_boards():
     return response
 
 
-@board_router.get("/get_board_tasks/<int:board_id>")
-def get_board_tasks(board_id: int):
-    response = board_executor.get_board_tasks(board_id)
-    return response
-
-
 @board_router.post("/create_board")
 def create_board():
     response = board_executor.create_board(request)

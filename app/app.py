@@ -8,8 +8,8 @@ def create_app() -> Flask:
     init_db()
 
     app = Flask("Synthetic")
-    app.register_blueprint(board_router, url_prefix="/board")
-    app.register_blueprint(task_router, url_prefix="/task")
+    app.register_blueprint(board_router, url_prefix="/api/board")
+    app.register_blueprint(task_router, url_prefix="/api/task")
 
     return app
 

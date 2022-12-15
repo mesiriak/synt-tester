@@ -24,7 +24,7 @@ class Board(DBase):
         info = {
             "id": self.id,
             "is_open": self.is_open,
-            "tasks": ["task"+str(i+1) for i in range(len(self.tasks))],
+            "tasks": ["task"+str(self.tasks[i].id) for i in range(len(self.tasks))],
             "created_at": self.created_at,
             "updated_at": self.updated_at
         }
